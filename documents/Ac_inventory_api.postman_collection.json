@@ -1,0 +1,28 @@
+{
+	"info": {
+		"_postman_id": "bfb72c02-f11b-4238-814e-16de2e873c28",
+		"name": "Ac_inventory_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://acrossserver.local/hello-world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://acrossserver.local/hello-world",
+					"protocol": "http",
+					"host": [
+						"acrossserver",
+						"local"
+					],
+					"path": [
+						"hello-world"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
