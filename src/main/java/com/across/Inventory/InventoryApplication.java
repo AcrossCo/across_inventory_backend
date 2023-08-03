@@ -1,4 +1,4 @@
-package com.across.Inventory;
+package com.across.inventory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
