@@ -17,8 +17,12 @@ import java.util.List;
 @Service
 public class PurchaseOrderServiceImpl implements PurchaseOrderService {
 
+    private final PurchaseOrderRepository purchaseOrderRepository;
+
     @Autowired
-    private PurchaseOrderRepository purchaseOrderRepository;
+    public PurchaseOrderServiceImpl(PurchaseOrderRepository _purchaseOrderRepository){
+        this.purchaseOrderRepository = _purchaseOrderRepository;
+    }
 
     /**
      * get all purchase orders
@@ -26,7 +30,7 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
      */
     @Override
     public List<PurchaseOrder> getPurchaseOrders() {
-        return purchaseOrderRepository.list();
+        return purchaseOrderRepository.findAll();
     }
 
 }

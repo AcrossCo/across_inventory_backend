@@ -6,6 +6,7 @@ import com.across.Inventory.model.PurchaseOrder;
 import com.across.Inventory.service.PurchaseOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,22 +16,22 @@ import java.util.List;
  * PO controller
  * Author ravindra@jp-across.com
  */
-@RestController
-@RequestMapping("/api")
+@Controller
+@RequestMapping(path="/api/purchaseorder")
 public class PurchaseOrderController {
 
+    private final PurchaseOrderService purchaseOrderService;
     @Autowired
-    private PurchaseOrderService purchaseOrderService;
-
-    public PurchaseOrderController() {
+    public PurchaseOrderController(PurchaseOrderService _purchaseOrderService) {
+        this.purchaseOrderService = _purchaseOrderService;
     }
 
     /**
      * HTTP method GET
      * return orders
      */
-    @GetMapping("/purchaseorders")
-    public ResponseEntity<List<PurchaseOrder>> list() {
+    @GetMapping
+    public ResponseEntity<List<PurchaseOrder>> getPurchaseOrders() {
         List<PurchaseOrder> orders = purchaseOrderService.getPurchaseOrders();
         return ResponseEntity.ok(orders);
     }
@@ -39,7 +40,7 @@ public class PurchaseOrderController {
      * HTTP method POST
      * return
      */
-    @PostMapping("/purchaseorders")
+    @PostMapping
     public PurchaseOrder addOrder(@RequestBody PurchaseOrder order) {
 
         return new PurchaseOrder();
