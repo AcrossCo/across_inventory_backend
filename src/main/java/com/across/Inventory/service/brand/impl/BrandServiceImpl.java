@@ -36,7 +36,7 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public void deleteBrand(Brand brand) {
-        brandRepository.delete(brand);
+    public void deleteBrand(int id) {
+        brandRepository.deleteById(id);
     }
 }

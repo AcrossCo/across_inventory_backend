@@ -15,5 +15,5 @@ public interface BrandService {
 
     Optional<Brand> getBrandById(int id);
 
-    void deleteBrand(Brand brand);
+    public void deleteBrand(int id);
 }

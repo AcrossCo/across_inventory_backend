@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,14 +37,15 @@ public class BrandController {
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Optional<Brand>> deleteBrandById(@PathVariable int id) {
         Optional<Brand> brand = brandService.getBrandById(id);
-        brand.ifPresent(value -> brandService.deleteBrand(value));
+        brand.ifPresent(value -> brandService.deleteBrand(value.getId()));
         return ResponseEntity.ok(brand);
     }
 
     @PostMapping
-    public ResponseEntity<Brand> addBrand(@RequestBody Brand brand){
-        System.out.println(brandService.save(brand));
-        return ResponseEntity.ok(brand);
+    public ResponseEntity<Object> addBrand(@RequestBody Brand brand) {
+        Brand savedBrand = brandService.save(brand);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedBrand.getId()).toUri();
+        return ResponseEntity.created(location).build();
     }
 
 }
