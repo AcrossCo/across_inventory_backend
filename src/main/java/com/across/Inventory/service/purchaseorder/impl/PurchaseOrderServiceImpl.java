@@ -1,10 +1,10 @@
-package com.across.Inventory.service.purchaseorder.impl;
+package com.across.inventory.service.purchaseorder.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.across.Inventory.model.PurchaseOrder;
-import com.across.Inventory.repository.PurchaseOrderRepository;
-import com.across.Inventory.service.PurchaseOrderService;
+import com.across.inventory.model.PurchaseOrder;
+import com.across.inventory.repository.PurchaseOrderRepository;
+import com.across.inventory.service.PurchaseOrderService;
 import org.springframework.stereotype.Service;
 
 

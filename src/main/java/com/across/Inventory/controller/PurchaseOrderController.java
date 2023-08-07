@@ -1,9 +1,10 @@
-package com.across.Inventory.controller;
+package com.across.inventory.controller;
 
 
-import com.across.Inventory.model.PurchaseOrder;
+import com.across.inventory.model.PurchaseOrder;
+import com.across.inventory.model.PurchaseOrderDetail;
+import com.across.inventory.service.PurchaseOrderService;
 
-import com.across.Inventory.service.PurchaseOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -42,7 +43,9 @@ public class PurchaseOrderController {
      */
     @PostMapping
     public PurchaseOrder addOrder(@RequestBody PurchaseOrder order) {
-
+        int id = order.getCreated_user_id();
+        int supid = order.getSupplier_id();
+        PurchaseOrder podfr = order;
         return new PurchaseOrder();
     }
 

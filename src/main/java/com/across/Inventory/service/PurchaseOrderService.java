@@ -1,6 +1,6 @@
-package com.across.Inventory.service;
+package com.across.inventory.service;
 
-import com.across.Inventory.model.PurchaseOrder;
+import com.across.inventory.model.PurchaseOrder;
 
 import java.util.List;
 

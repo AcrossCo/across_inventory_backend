@@ -1,10 +1,8 @@
 package com.across.inventory.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Data;
+
 
 /**
  * PODetail model
@@ -12,13 +10,18 @@ import lombok.Data;
  */
 @Entity
 @Data
-public class PoDetail {
+public class PurchaseOrderDetail {
 
-    public PoDetail() {}
+    public PurchaseOrderDetail() {}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int PO_ID;
     private int Item_ID;
-    private int OrderQty;
+    private int Order_Qty;
+
+    @ManyToOne( fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id", nullable = false)
+    private PurchaseOrder purchaseOrder;
+
 }

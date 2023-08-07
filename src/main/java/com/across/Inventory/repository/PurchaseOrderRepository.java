@@ -1,6 +1,6 @@
-package com.across.Inventory.repository;
+package com.across.inventory.repository;
 
-import com.across.Inventory.model.PurchaseOrder;
+import com.across.inventory.model.PurchaseOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
