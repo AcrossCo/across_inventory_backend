@@ -1,13 +1,12 @@
 package com.across.inventory.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Sandun Rajitha
@@ -17,16 +16,8 @@ import java.util.List;
 @Data
 public class Country {
     @Id
-    @GeneratedValue
     private int id;
-    private String iso;
     private String name;
-    private String country_code;
-    private int phonecode;
-
-    @OneToMany
-    @JsonIgnore
-    private List<Customer> customers;
 
     protected Country() {
     }
