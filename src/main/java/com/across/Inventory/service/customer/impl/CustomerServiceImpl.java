@@ -1,7 +1,6 @@
 package com.across.inventory.service.customer.impl;
 
 import com.across.inventory.model.Customer;
-import com.across.inventory.repository.BrandRepository;
 import com.across.inventory.repository.CustomerRepository;
 import com.across.inventory.service.customer.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
