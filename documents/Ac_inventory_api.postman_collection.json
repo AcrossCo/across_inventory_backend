@@ -6,6 +6,176 @@
 	},
 	"item": [
 		{
+			"name": "Brand",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/brands/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/brands/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"brands",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sub_category_id\":1,\r\n    \"sku\":\"sku4\",\r\n    \"name\":\"Sakura Aging Care Essence EX test\",\r\n    \"name_jp\":\"抹茶美人エッセンシャルセラムテスト\",\r\n    \"jan\": \"4562321902139\",\r\n    \"brand_id\":1,\r\n    \"measure_unit_id\":1,\r\n     \"rol\": 1,\r\n     \"moq\": 3,\r\n     \"selling_price\": 5000.00,\r\n     \"created_user_id\": 1,\r\n     \"last_modified_user_id\": 1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/item/active",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n     \"active\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/item/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"item",
+								"active"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "purchase",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/purchaseorder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //\"order\":{\r\n    \"supplier_id\":\"10001\",\r\n    \"created_user_id\":\"10\",\r\n    \"created_date\":\"2023-08-03\",\r\n    \"cancelled_date\":null,\r\n    \"Cancelled_remark\":null,\r\n    \"cancelled_user_id\":0,\r\n    \"completed_date\":null,\r\n    \"completed_remark\":\"full\",\r\n    \"completed_user_id\":20\r\n    // \"podetail\":[\r\n    //     {\r\n    //     \"Item_ID\":1,\r\n    //     \"Order_Qty\":2\r\n    // },\r\n    // {\r\n    //     \"Item_ID\":3,\r\n    //     \"Order_Qty\":1\r\n    // },\r\n    //   {\r\n    //     \"Item_ID\":10,\r\n    //     \"Order_Qty\":1\r\n    // }\r\n    // ]\r\n    //}   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/purchaseorder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"purchaseorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/purchaseorder",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/purchaseorder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"purchaseorder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "http://acrossserver.local/hello-world",
 			"request": {
 				"method": "GET",
